@@ -1,0 +1,84 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'blogs/main.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RM Wise Dashboard</title>
+   <style>
+     table {
+    border-collapse: collapse;
+    border-spacing: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    font-family: sans-serif;
+    
+  }
+  
+  th {
+    border: 1px solid white;
+    padding: 16px;
+    border-bottom: 1px solid black;
+    border-top: 1px grey;
+    text-align:center;
+    background-color: white;
+    color: black;
+  }
+
+  td {
+    border: 1px solid white;    
+    padding: 16px;
+    text-align:center;
+    color: gray;
+    }
+  
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+
+  
+  
+  body{
+    background-color:white;
+  }
+
+  
+  
+
+   </style> 
+</head>
+<body>
+  
+  <h3>Customer List</h3>
+    <table class="table">
+      
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Mobile No</th>
+            <th scope="col">Date Of Birth</th>
+        </tr>
+        </thead>
+        <tbody>
+          
+          {% for customer in context %}
+          <tr>  
+            <td>{{customer.ad_applicant_first_name}} {{customer.ad_applicant_surname}}</td>
+            <td>{{customer.ad_i_bi_email_id}}</td>
+            <td>{{customer.ad_i_bi_contact_no}}</td>
+            <td>{{customer.ad_i_dob}}</td>
+            
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</body>
+
+</html>
+  

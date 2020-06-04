@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.wrap {
+    width: Auto;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.wrap2 {
+    width: Auto;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+
+.search_categories{
+  font-size: 13px;
+  background: #fff;
+  position: relative;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 10px;
+    width: 50%;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    font-family: sans-serif;
+    
+  }
+
+.container{
+    padding-left: 315px;
+    padding-bottom: 5px;
+    font-family: sans-serif;
+}
+
+.container1{
+    padding-left: 450px;
+    padding-bottom: 5px;
+    font-family: sans-serif;
+}
+
+th {
+    border: 1px solid white;
+    padding: 6px;
+    border-bottom: 1px solid black;
+    border-top: 1px grey;
+    text-align:center;
+    background-color: grey;
+    color: black;
+    font-size: 14;
+  }
+
+  td {
+    border: 1px solid white;    
+    padding: 16px;
+    text-align:center;
+    color: gray;
+    }
+
+button {
+  background-color: rgb(5, 97, 202);
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.border{
+    border:1px solid black;
+    padding: 10px;
+}
+  
+
+    </style>
+</head>
+<body>
+    <div class='border'>
+    <div class='wrap'>
+        <div class='col1'>
+            <h4>Broadcast</h4>
+            <h4>Message Type</h4>
+            <h2><u>Broadcast Details</u></h2>
+            <h4>Sr No</h4>
+            <h4>Name</h4>
+            <h4>Loan Product</h4>
+            
+        </div>
+        <div class='col2'>
+            <h4>SMS</h4>
+            <div class="search_categories">
+                <div class="select">
+                   <select name="search_categories" id="search_categories">
+                      <option value="1" selected="selected">Loan Notice</option>
+                      <option value="2">New Campaign</option>
+                      <option value="3">General Notification</option>
+                    </select>
+                 </div>
+             </div>
+            <h4>dlkslkf</h4>
+            <form>
+                <input type='text'>
+            </form><br>
+            <form>
+                <input type='text'>
+            </form><br>
+            <form>
+                <input type='text'>
+            </form>
+        </div>
+            
+    </div>
+    <div class='container'>
+        <h3><u>Recepient Details</u></h3>
+    </div>
+    <div class='container'>
+        <table class='table'>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>contact</th>
+                <th>Edit</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+
+            
+                    <a href="{% url 'get-list' %}"><td>{{name_and_contact}}</td></a>
+                    <td>{{lst.ad_i_bi_contact_no}}</td>
+                    <td>Edit</td>
+                
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class='wrap2'>
+        <div class='col1'>
+            <h4>Total Count</h4>
+            <h4>Select Message Template</h4>
+        </div>
+        <div class='col2'>
+            <h4>22</h4>
+            <h4>List</h4>
+        </div>
+    </div>
+    <div class='container'>
+        <h3>Message</h3>
+        <p>Template msg as per list is displayed here</p>
+    </div>
+    <div class='container'>
+        <h3>Schedule Date And Time</h3>
+        <table class='table'>
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>22/10/2020</td>
+                    <td>9:45</td>
+                
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class='container1'><button class='button' type="submit">Send SMS</button></div>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM Wise Dashboard</title>
+    <style>
+body {font-family: sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 10px 20px; 
+  margin: 8px 0;
+  display: inline-block;
+  border: 1
+  px solid #ccc;
+  box-sizing: border-box;
+  height: 30px;
+}  
+
+
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+.container {
+  padding: 10px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 10px;
+}
+
+.left{
+  width:30%;
+  hieght: 30px;
+  float: left;
+}
+
+.right{
+  width:30%;
+  hieght: 30px;
+  float: right;
+}
+
+.email{
+    width:30%
+}
+
+</style>
+</head>
+<body>
+  <a class="nav-link" href="{% url 'edit-details' pk=context.pk %}"></a>
+    <h2>Edit RM Details</h2>
+    <form method="POST">
+        <div class="container">
+        {% csrf_token %}
+          <div class="left">
+            <h4>Firstname:{{form.first_name}}</h4>
+            <h4>Lastname:{{form.last_name}}</h4>
+            <div class="email">
+              <label><h4>Email ID:{{form.email}}</h4></label>
+            </div>
+             <h4> Date of Birth:{{form.dob}}</h4>  
+            <h4>Mobile Number:{{form.mobile_number}}</h4>
+          </div>
+        <div class="right">
+          <h4>Activated:{{form.is_active}}</h4>
+            <h4>Role:{{form.role}}</h4>
+            <h4>Office ID:{{form.office_id}}</h4>
+             <h4> Transfer Executive:{{form.transfer_executives}}</h4>  
+            <h4>Transfer Loans{{form.transfer_loans}}</h4>
+        </div> 
+        <button type="submit">Save</button>
+        </div>  
+    </form>
+</body>
+</html>
+
+
+

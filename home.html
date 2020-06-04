@@ -1,0 +1,97 @@
+{% extends 'collection/base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'blogs/main.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RM Wise Dashboard</title>
+   <style>
+     table {
+    border-collapse: collapse;
+    border-spacing: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    font-family: sans-serif;
+    
+  }
+  
+  th {
+    border: 1px solid white;
+    padding: 16px;
+    border-bottom: 1px solid black;
+    border-top: 1px grey;
+    text-align:center;
+    background-color: white;
+    color: black;
+  }
+
+  td {
+    border: 1px solid white;    
+    padding: 16px;
+    text-align:center;
+    color: gray;
+    }
+  
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+
+  
+  
+  body{
+    background-color:white;
+  }
+   </style> 
+</head>
+<body>
+  
+  <h3>RM Wise Dashboard>Firstname Lastname</h3>
+    <table class="table">
+      
+        <thead>
+          <tr>
+            <th scope="col">Office ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">Mobile No</th>
+            <th scope="col">Activated</th>
+            <th scope="col">Role</th>
+            <th scope="col">Transefer Executives</th>
+            <th scope="col">Transfer Loan</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Details</th>
+
+          
+        
+          </tr>
+        </thead>
+        <tbody>
+          
+          {% for rm in context %}
+          <tr>  
+            <td>{{rm.office_id}}</td>
+            <td>{{rm.first_name}} {{rm.last_name}}</td>
+            <td>{{rm.email}}</td>
+            <td>{{rm.mobile_number}}</td>
+            <td>{{rm.is_active}}</td>
+            <td>{{rm.role}}</td>
+            <td>{{rm.transfer_executives}}</td>
+            <td>{{rm.transfer_loans}}</td>
+            <td><button>Edit</button></td>
+          
+          
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</body>
+
+</html>
+ {% endblock %} 
+
